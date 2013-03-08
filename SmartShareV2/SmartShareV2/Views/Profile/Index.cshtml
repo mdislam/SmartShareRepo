@@ -1,0 +1,26 @@
+﻿@model IEnumerable<SmartShareV2.Models.Advertisements>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Advertisements by Users</h2>
+
+@foreach (var item in Model)
+{
+    <article>
+        <div>
+            <h3>@Html.DisplayFor(modelItem => item.AdvertisementTitle)</h3>
+            <p><i>Created by <b>@item.UserId</b> [need to replace the userid by username] on @item.CreatedOn.ToShortDateString()</i></p>
+            <p>@item.AdvertisementDesc</p>
+        </div>
+
+        <div id="linkBtns">
+            @Html.ActionLink("Edit", "Edit", "Home", new { id=item.AdvertisementID }, null) |
+            @Html.ActionLink("Details", "Details", "Home", new { id = item.AdvertisementID }, null) |
+            @Html.ActionLink("Delete", "Delete", "Home", new { id=item.AdvertisementID }, null)
+        </div>
+        <hr />
+
+    </article>
+}
