@@ -1,0 +1,64 @@
+﻿@model SmartShareV2.Models.Advertisements
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Advertisements</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AdvertisementTitle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AdvertisementTitle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AdvertisementDesc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AdvertisementDesc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedOn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedOn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CategoryType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CategoryType)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AdvertisementType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AdvertisementType)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.AdvertisementID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -186,10 +186,40 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201303072208409_InitialCreate.cs" />
+    <Compile Include="Migrations\201303072208409_InitialCreate.Designer.cs">
+      <DependentUpon>201303072208409_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201303101709154_AddAdvertisement.cs" />
+    <Compile Include="Migrations\201303101709154_AddAdvertisement.Designer.cs">
+      <DependentUpon>201303101709154_AddAdvertisement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201303101712563_AddNotification.cs" />
+    <Compile Include="Migrations\201303101712563_AddNotification.Designer.cs">
+      <DependentUpon>201303101712563_AddNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201303101713309_AddAdvertisements.cs" />
+    <Compile Include="Migrations\201303101713309_AddAdvertisements.Designer.cs">
+      <DependentUpon>201303101713309_AddAdvertisements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201303101715325_AddNotification1.cs" />
+    <Compile Include="Migrations\201303101715325_AddNotification1.Designer.cs">
+      <DependentUpon>201303101715325_AddNotification1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201303101719000_AddCategory.cs" />
+    <Compile Include="Migrations\201303101719000_AddCategory.Designer.cs">
+      <DependentUpon>201303101719000_AddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201303101724477_AddAdvertise.cs" />
+    <Compile Include="Migrations\201303101724477_AddAdvertise.Designer.cs">
+      <DependentUpon>201303101724477_AddAdvertise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Advertisements.cs" />
     <Compile Include="Models\Category.cs" />
@@ -333,13 +363,40 @@
     <Content Include="Views\Notification\Delete.cshtml" />
     <Content Include="Views\Notification\Inbox.cshtml" />
     <Content Include="Views\Notification\Outbox.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Test\Details.cshtml" />
+    <Content Include="Views\Test\Create.cshtml" />
+    <Content Include="Views\Test\Edit.cshtml" />
+    <Content Include="Views\Test\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201303072208409_InitialCreate.resx">
+      <DependentUpon>201303072208409_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303101709154_AddAdvertisement.resx">
+      <DependentUpon>201303101709154_AddAdvertisement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303101712563_AddNotification.resx">
+      <DependentUpon>201303101712563_AddNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303101713309_AddAdvertisements.resx">
+      <DependentUpon>201303101713309_AddAdvertisements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303101715325_AddNotification1.resx">
+      <DependentUpon>201303101715325_AddNotification1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303101719000_AddCategory.resx">
+      <DependentUpon>201303101719000_AddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201303101724477_AddAdvertise.resx">
+      <DependentUpon>201303101724477_AddAdvertise.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
