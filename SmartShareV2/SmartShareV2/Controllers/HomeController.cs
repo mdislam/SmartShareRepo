@@ -7,8 +7,10 @@ using System.Web;
 using System.Web.Mvc;
 using SmartShareV2.Models;
 using System.Web.Security;
-using System.Web.UI.WebControls;
+//using System.Web.UI.WebControls;
 using System.IO;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace SmartShareV2.Controllers
 {
@@ -24,19 +26,64 @@ namespace SmartShareV2.Controllers
             return View(db.Advertisements.ToList());
         }
 
-        public FileContentResult getImg(int id)
+        //public FileContentResult getImg(int id)
+        //{
+        //    Advertisements advertisements = db.Advertisements.Find(id);
+        //    byte[] byteArray = advertisements.AdvertisementImage;
+        //    if (byteArray != null)
+        //    {
+        //        return new FileContentResult(byteArray, "image/jpeg");
+        //    }
+        //    else
+        //    {
+        //        return null;
+        //    }
+        //}
+
+        public Image getImgae(int id)
         {
             Advertisements advertisements = db.Advertisements.Find(id);
             byte[] byteArray = advertisements.AdvertisementImage;
+
             if (byteArray != null)
             {
-                return new FileContentResult(byteArray, "image/jpeg");
+                MemoryStream memoryStream = new MemoryStream(byteArray);
+                return Image.FromStream(memoryStream);
             }
             else
             {
                 return null;
             }
         }
+
+        //public HttpResponseMessage getImage(int id)
+        //{
+        //    HttpResponseMessage response = new HttpResponseMessage();
+            
+        //    Advertisements advertisements = db.Advertisements.Find(id);
+        //    TypeConverter typeConverter = TypeDescriptor.GetConverter(typeof(Bitmap));
+        //    Bitmap bmp = (Bitmap)typeConverter.ConvertFrom(advertisements.AdvertisementImage);
+
+        //    var Fs = new FileStream(HostingEnvironment.MapPath("~/Images") + @"\I" + id.ToString() + ".png", FileMode.Create);
+        //    bmp.Save(Fs, ImageFormat.Png);
+        //    bmp.Dispose();
+
+        //    Image img = Image.FromStream(Fs);
+        //    Fs.Close();
+        //    Fs.Dispose();
+
+        //    MemoryStream ms = new MemoryStream();
+        //    img.Save(ms, ImageFormat.Png);
+
+        //    response.Content = new ByteArrayContent(ms.ToArray());
+        //    ms.Close();
+        //    ms.Dispose();
+
+        //    response.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
+        //    response.StatusCode = HttpStatusCode.OK;
+
+        //    return response;
+        //}
 
         //
         // GET: /Home/Details/5

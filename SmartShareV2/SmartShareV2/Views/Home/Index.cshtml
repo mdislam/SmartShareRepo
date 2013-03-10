@@ -17,7 +17,7 @@
     <article>
         <div>
             <h3>@Html.DisplayFor(modelItem => item.AdvertisementTitle)</h3>
-            <p><i>Created by <b>@item.UserId</b> [need to replace the userid by username] on @item.CreatedOn.ToShortDateString()</i></p>
+            <p><i>Created by <b>@item.UserId</b> [need to replace the userid by username] on @item.CreatedOn.ToShortDateString() @item.CreatedOn.ToShortTimeString()</i></p>
             <p>@item.AdvertisementDesc</p>
         </div>
 

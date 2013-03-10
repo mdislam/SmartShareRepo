@@ -14,7 +14,7 @@
             <h3>@Model.AdvertisementTitle - [I have used hard coded styles here]</h3>
         </div>
         <div style="width: 50%; margin: 0 auto; float: left; padding: 10px">
-            <p><i>Created by <b>@Model.UserId</b> [need to replace the userid by username] on @Model.CreatedOn.ToShortDateString()</i></p>
+            <p><i>Created by <b>@Model.UserId</b> [need to replace the userid by username] on @Model.CreatedOn.ToShortDateString() @Model.CreatedOn.ToShortTimeString()</i></p>
 
             <p>
                 Description: @Model.AdvertisementDesc
@@ -25,7 +25,6 @@
                 <br />
                 Price: @Model.Price euro
                 <br />
-                
             </p>
         </div>
         <div style="width: 30%; margin: 0 auto; float: left; padding: 5px">
@@ -35,4 +34,7 @@
 </fieldset>
 <p id="linkBtns">
     @Html.ActionLink("Back to List", "Index")
+</p>
+<p id="linkBtns">
+    @Html.ActionLink("Reply", "Create", "Notification")
 </p>

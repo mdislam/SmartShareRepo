@@ -4,7 +4,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Advertisements by Users</h2>
+
+@Html.ActionLink("Inbox", "Inbox", "Notification") |
+@Html.ActionLink("Outbox", "Outbox", "Notification")
+
+<h2>My Post</h2>
+
+<p id="advertisement">
+    @Html.ActionLink("Add New Advertisement", "Create", "Home")
+</p>
 
 @foreach (var item in Model)
 {
